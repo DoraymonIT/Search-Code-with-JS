@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" type="text/css" href="test.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<title>Test</title>
+	</head>
+	<body>
+		<div class="container" style="padding: 40px">
+			<hr />
+			<div class="row">
+				<div class="col-md-2" style="margin-right: -130px;">
+					Search :
+				</div>
+				<div class="col-md-2">
+					<input
+						id="search"
+						name="search"
+						onkeyup="search()"
+						class="form-control"
+					/>
+					<ul id="myList">
+						<li class="famille" id="test0"></li>
+						<li class="famille" id="test1"></li>
+						<li class="famille" id="test2"></li>
+						<li class="famille" id="test3"></li>
+						<li class="famille" id="test4"></li>
+						<li class="famille" id="test5"></li>
+					</ul>
+				</div>
+				<div class="col-md-2" style="margin-right: -130px;">Add :</div>
+				<div class="col-md-2">
+					<input
+						id="add"
+						type="text"
+						name="add"
+						class="form-control"
+					/>
+				</div>
+				<div class="col-md-2">
+					<button class="btn btn-secondary" onclick="add()">
+						Add
+					</button>
+				</div>
+			</div>
+
+			<hr />
+			<!-- <h6 id="noDataFound">No Data Found</h6> -->
+			<div class="row">
+				<div
+					class="col-md-3"
+					style="padding-top: 10px; padding-bottom: 10px;"
+				>
+					<label>
+						Search By Id
+					</label>
+					<input
+					id="searchId"
+						type="text"
+						name="searchTable"
+						class="form-control" 
+						onkeyup="searchTable1()"
+					/>
+				</div>
+				<div
+					class="col-md-4"
+					style="padding-top: 10px; padding-bottom: 10px;"
+				>
+					<label>
+						Search By Name
+					</label>
+					<input
+					id="searchName"
+						type="text"
+						name="searchTable"
+						class="form-control" 
+						onkeyup="searchTable2()"
+					/>
+				</div>
+				<div
+					class="col-md-4"
+					style="padding-top: 10px; padding-bottom: 10px;"
+				>
+					<label>
+						Search By Salaire
+					</label>
+					<input
+						id="searchSalaire"
+						type="text"
+						name="searchTable"
+						class="form-control" 
+						onkeyup="searchTable3()"
+					/>
+				</div>
+				<div class="col-md-1" style="padding-top: 45px;">
+					<button
+						class="btn btn-secondary btn-sm"
+						style="float: right;"
+						data-toggle="modal" data-target="#exampleModal"
+					>
+						<i class="fa fa-plus"></i>
+					</button>
+				</div>
+				<table
+				id="myTable"
+					class="table table-bordered table-hover table-striped"
+					style="text-align: center;">
+				
+				</table>
+				<h6 id="no">No Data Found !!</h6>
+			</div>
+<hr>
+<table 	class="table table-bordered table-hover table-striped">
+	<tr>
+		<th>Name</th>
+	<th>Action</th>
+	</tr>
+	<tr id="data">
+		<td>Ayoub</td>
+	<td><button class="btn-danger btn-sm btn fa fa-trash" 	data-toggle="modal" data-target="#delete"></button></td>
+	</tr>
+	
+</table>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add item to Table</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<label>Id :</label>
+        <input type="number" name="id" id="identifiant" class="form-control">
+         	<label>Name:</label>
+        <input type="text" name="nom" id="name" class="form-control">
+         	<label>Salaire :</label>
+        <input type="number" name="salaire" id="salaire" class="form-control">
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-outline-dark" onclick="addTable()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     <div class="modal-body">Do you want to Delete this Item ?</div>
+      <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal"><i class="fa fa-ban"></i> No</button>
+        <button type="button" class="btn btn-danger" onclick="deletee()"> <i class="fa fa-check"></i> Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+		</div>
+	</body>
+	<script src="test.js"></script>
+	<script
+		src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"
+	></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"
+	></script>
+</html>
