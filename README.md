@@ -26,5 +26,5 @@
 #### Fill in the field with Id , Name , Salary and click Save Changes  
 ![alt text](https://github.com/DoraymonIT/Search-Code-with-JS/blob/master/table5.png?raw=true)
 #### Resultat :
-![alt text](https://github.com/DoraymonIT/Search-Code-with-JS/blob/master/table6.png?raw=true)
+![alt text](https://github.com/DoraymonIT/Search-Code-with-JS/blob/master/table7.png?raw=true)
 
